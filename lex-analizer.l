@@ -78,9 +78,9 @@ STRING       \".*\"
 %%
 					/* yytext is the text in the buffer */
 For                                     { addToPIF(yytext, -1); }
-if					                            { addToPIF(yytext, -1); }
-otherwise					                      { addToPIF(yytext, -1); }
-go					                            { addToPIF(yytext, -1); }
+if					{ addToPIF(yytext, -1); }
+otherwise				{ addToPIF(yytext, -1); }
+go					{ addToPIF(yytext, -1); }
 then                                   	{ addToPIF(yytext, -1); }
 do                                      { addToPIF(yytext, -1); }
 from                                   	{ addToPIF(yytext, -1); }
@@ -97,20 +97,24 @@ end                                     { addToPIF(yytext, -1); }
 \;                                    	{ addToPIF(yytext, -1); }
 \(                                    	{ addToPIF(yytext, -1); }
 \)                                    	{ addToPIF(yytext, -1); }
+\]                                      { addToPIF(yytext, -1); }
+\[                                      { addToPIF(yytext, -1); }
+\}                                      { addToPIF(yytext, -1); }
+\-                                      { addToPIF(yytext, -1); }
+\{                                      { addToPIF(yytext, -1); }
 \,                                    	{ addToPIF(yytext, -1); }
-\+                                    	{ addToPIF(yytext, -1); }
-\-                                    	{ addToPIF(yytext, -1); }
-\*                                    	{ addToPIF(yytext, -1); }
-\/                                    	{ addToPIF(yytext, -1); }
-\%                                    	{ addToPIF(yytext, -1); }
-\>                                    	{ addToPIF(yytext, -1); }
-\<                                    	{ addToPIF(yytext, -1); }
-\>=                                    	{ addToPIF(yytext, -1); }
-\<=                                    	{ addToPIF(yytext, -1); }
-\=                                    	{ addToPIF(yytext, -1); }
-\==                                    	{ addToPIF(yytext, -1); }
-\and                                    { addToPIF(yytext, -1); }
-\or                                    	{ addToPIF(yytext, -1); }
+\.+                                    	{ addToPIF(yytext, -1); }
+\.-                                   	{ addToPIF(yytext, -1); }
+\.*                                   	{ addToPIF(yytext, -1); }
+\./                                    	{ addToPIF(yytext, -1); }
+\.<                                    	{ addToPIF(yytext, -1); }
+\.>                                    	{ addToPIF(yytext, -1); }
+\.=<                                    { addToPIF(yytext, -1); }
+\.=>                                    { addToPIF(yytext, -1); }
+\.=                                   	{ addToPIF(yytext, -1); }
+\!!=                                    { addToPIF(yytext, -1); }
+\^&                                   	{ addToPIF(yytext, -1); }
+\^|                                     { addToPIF(yytext, -1); }
 \.                                    	{ addToPIF(yytext, -1); }
 \!=                                    	{ addToPIF(yytext, -1); }
 {IDENTIFIER}				{ int stCode = addToST(yytext); addToPIF(yytext, stCode); }
